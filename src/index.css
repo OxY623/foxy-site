@@ -1,3 +1,18 @@
+@import "tailwindcss";
+@import "fox.variables.css";
+
+
+@layer base {  *,  ::after,  ::before,  ::backdrop,  ::file-selector-button {    border-color: var(--color-fox-dark, currentColor);  }}
+
+@theme {  --default-ring-width: 3px;  --default-ring-color: var(--color-fox-orange);}
+
+body {
+  color: var(--color-fox-dark);
+  background: var(--color-fox-light);
+  font-family: var(--font-inter);
+}
+
+/*
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -65,4 +80,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */

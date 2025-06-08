@@ -1,34 +1,21 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import {Header} from './components/Header'
+import { useDarkMode } from './components/hooks/useDarkMode'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const {darkMode, toggleDarkMode} = useDarkMode()
+  const [remainingShirts, setRemainingShirts] = useState(20)
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className={`min-h-screen ${darkMode ? 'bg-gray-900' : 'bg-white'} font-inter`}>
+      <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      <h1 className='bg-(--color-fox-red) text-(--color-fox-red)'>Hellow World</h1>
+      <p className='bg-amber-300 text-black'>This is test</p>
+      <div className="bg-fox-red">...</div>
+      <div className="text-(--color-fox-orange)">...</div>
+      <div className="border-(--color-fox-dark)">...</div>
+    </div>
   )
 }
 
